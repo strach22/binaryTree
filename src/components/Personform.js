@@ -21,7 +21,7 @@ export default class Personform extends Component {
             name:'',
             age:'',
             gender:'Male',
-            data:[{code:"",name:'',age:'',gender:''}]
+            data:[{code:"1",name:'Francisco',age:'20',gender:'Male'},{code:"1.1",name:'Daniela',age:'22',gender:'Female'}]
         }
       }
     
@@ -98,6 +98,16 @@ export default class Personform extends Component {
                     <FormControlLabel value="Male" control={<Radio />} label="Male" />
                     <FormControlLabel value="Female" control={<Radio />} label="Female" />
                     <FormControlLabel value="Other" control={<Radio />} label="Other" />
+                    </RadioGroup>
+                    <RadioGroup
+                    row
+                    aria-labelledby="demo-row-radio-buttons-group-label"
+                    name="level"
+                    defaultValue={"base"}
+                    onChange={this.handleChange}
+                    >
+                    <FormControlLabel value="base" control={<Radio />} label="Base" />
+                    <FormControlLabel value="dependent" control={<Radio />} label="Dependent" />
                     </RadioGroup>
 
                     <Button variant='contained' onClick={this.savePerson}>Save</Button>
