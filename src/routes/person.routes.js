@@ -12,14 +12,14 @@ router.get('/:id',async (req,res)=>{
 });
 
 router.post('/', async(req,res)=>{
-    const {name,gender,age}=req.body;
-    const person = new Person({name,gender,age});
+    const {code,name,gender,age}=req.body;
+    const person = new Person({code,name,gender,age});
     await person.save();
     res.json({status:"Person Saved"})
 });
 router.put('/:id',async (req,res)=>{
-    const {name,gender,age}=req.body;
-    const newPerson = {name,gender,age};
+    const {code,name,gender,age}=req.body;
+    const newPerson = {code,name,gender,age};
     await Person.findByIdAndUpdate(req.params.id,newPerson)
     res.json({status:"Person Updated"})
 });
