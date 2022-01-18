@@ -1,4 +1,3 @@
-const { TASKCLUSTER } = require('ci-info');
 const express = require('express');
 const router = express.Router();
 const Person = require('../models/person.js');
